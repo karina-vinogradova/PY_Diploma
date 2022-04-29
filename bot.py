@@ -2,15 +2,13 @@ from random import randrange
 import vk_api
 from vk_api.longpoll import VkLongPoll, VkEventType
 from sql_uploader import SqlUploader
-from token_vk import token, group_token 
+from token_vk import group_token 
 import vk
 
 class Bot:
 
     def __init__(self):
-        self.token = token
-        self.group_token = group_token
-        self.vk = vk_api.VkApi(token=self.group_token)
+        self.vk = vk_api.VkApi(token=group_token)
         self.longpoll = VkLongPoll(self.vk)
 
     # Сообщение пользователю
